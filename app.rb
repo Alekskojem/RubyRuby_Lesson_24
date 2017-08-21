@@ -8,6 +8,7 @@ get '/' do
 end
 
 get '/About' do
+	@error = 'something wrong!'
 	erb :About
 end
 
@@ -22,6 +23,11 @@ post '/visit' do
 	@datetime = params[:datetime]
 	@barber = params[:barber]
 	@color = params[:color]
+
+	if @username == ''
+		@error = 'ВВЕДИТЕ ИМЯ!'
+		end
+
 	
 	erb "OK, Имя посетителя #{@username}, телфон #{@phone}, указано время #{@datetime}, мастера #{@barber}, #{@color}."
 end
