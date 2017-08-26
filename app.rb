@@ -28,12 +28,12 @@ post '/visit' do
 		   :phone => 'ВВЕДИТЕ НОМЕР ТЕЛЕФОНА',
 		   :datetime => 'Укажите точную дату и время!' }
 	#для каждой пары ключ-значение
-	hh.each do |kye, value|
-	if params [key] == ''
+	hh.each do |key, value|
+	if params[key] == ''
 		#переменной error присвоить value из хеша hh
 		#(a value из хеша hh это ссобщение об ошибке)
 		# переменной error присвоить сообщение об ошибке
-		@error == hh[key]
+		@error = hh[key]
 		#вернуть предстивление visit
 		return erb :visit
 	end
